@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html ng-app="">
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.14/angular.min.js"></script>
+		<script type="text/javascript" src="components/header/header.js"></script>
+		<script type="text/javascript" src="components/leftsidebar/leftsidebar.js"></script>
+		<script type="text/javascript" src="components/rightsidebar/rightsidebar.js"></script>
+		<script type="text/javascript" src="components/renderer/renderer.js"></script>
+		<link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" />
+		<script type="text/javascript">
+			window.onload = function () {
+				Renderer.Init(document.getElementById("canvas"));
+			}
+		</script>
+	</head>
+
+	<body>
+		<div class="container-fluid">
+			<div class="row" >
+				<div class="col-lg-12" ng-controller="HeaderCtrl">
+					<ng-include src='"components/header/header.html"'></ng-include>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-2" ng-controller="LeftSidebarCtrl">
+					<ng-include src='"components/leftsidebar/leftsidebar.html"' scope="" onload=""></ng-include>
+				</div>
+				<canvas id="canvas" class="col-lg-8">Browser doesn't support canvas</canvas>
+				<div class="col-lg-2" ng-controller="RightSidebarCtrl">
+					<ng-include src='"components/rightsidebar/rightsidebar.html"' scope="" onload=""></ng-include>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
